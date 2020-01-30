@@ -22,9 +22,12 @@ code {
     'four five six add'
     'one two three equal'
     'zero zero decimal equal';
-  background-color: #e6e6e6;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  padding: 2px;
   height: 500px;
   width: 400px;
+  background-color: #e6e6e6;
 }
 
 .calculator__button--type-ac {
