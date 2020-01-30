@@ -4,11 +4,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: '0',
+      expression: '',
+    };
+  }
+
   render() {
     return (
       <div className="calculator">
-        <Screen className="calculator__screen--type-expression" />
-        <Screen className="calculator__screen--type-display" />
+        <Screen
+          className="calculator__screen--type-expression"
+          value={this.state.expression}
+        />
+        <Screen
+          className="calculator__screen--type-display"
+          value={this.state.display}
+        />
         <Button className="calculator__button--type-ac ac" value="AC" />
         <Button
           className="calculator__button--type-operator divide"
@@ -43,17 +57,20 @@ class Calculator extends React.Component {
 class Screen extends React.Component {
   render() {
     const className = this.props.className;
+    const value = this.props.value;
 
-    return <div className={`calculator__screen ${className}`}>Screen</div>;
+    return <div className={`calculator__screen ${className}`}>{value}</div>;
   }
 }
 
 Screen.propTypes = {
   className: PropTypes.string,
+  value: PropTypes.string,
 };
 
 Screen.defaultProps = {
   className: '',
+  value: '',
 };
 
 class Button extends React.Component {
