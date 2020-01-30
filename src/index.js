@@ -18,37 +18,98 @@ class Calculator extends React.Component {
         <Screen
           className="calculator__screen--type-expression expression"
           value={this.state.expression}
+          id="expression"
         />
         <Screen
           className="calculator__screen--type-display display"
           value={this.state.display}
+          id="display"
         />
-        <Button className="calculator__button--type-ac ac" value="AC" />
+        <Button
+          className="calculator__button--type-ac ac"
+          value="AC"
+          id="clear"
+        />
         <Button
           className="calculator__button--type-operator divide"
           value="/"
+          id="divide"
         />
         <Button
           className="calculator__button--type-operator multiply"
           value="X"
+          id="multiply"
         />
         <Button
           className="calculator__button--type-operator subtract"
           value="-"
+          id="subtract"
         />
-        <Button className="calculator__button--type-operator add" value="+" />
-        <Button className="calculator__button--type-equal equal" value="=" />
-        <Button className="calculator__button--type-number zero" value="0" />
-        <Button className="calculator__button--type-number one" value="1" />
-        <Button className="calculator__button--type-number two" value="2" />
-        <Button className="calculator__button--type-number three" value="3" />
-        <Button className="calculator__button--type-number four" value="4" />
-        <Button className="calculator__button--type-number five" value="5" />
-        <Button className="calculator__button--type-number six" value="6" />
-        <Button className="calculator__button--type-number seven" value="7" />
-        <Button className="calculator__button--type-number eight" value="8" />
-        <Button className="calculator__button--type-number nine" value="9" />
-        <Button className="calculator__button--type-number decimal" value="." />
+        <Button
+          className="calculator__button--type-operator add"
+          value="+"
+          id="add"
+        />
+        <Button
+          className="calculator__button--type-equal equal"
+          value="="
+          id="equals"
+        />
+        <Button
+          className="calculator__button--type-number zero"
+          value="0"
+          id="zero"
+        />
+        <Button
+          className="calculator__button--type-number one"
+          value="1"
+          id="one"
+        />
+        <Button
+          className="calculator__button--type-number two"
+          value="2"
+          id="two"
+        />
+        <Button
+          className="calculator__button--type-number three"
+          value="3"
+          id="three"
+        />
+        <Button
+          className="calculator__button--type-number four"
+          value="4"
+          id="four"
+        />
+        <Button
+          className="calculator__button--type-number five"
+          value="5"
+          id="five"
+        />
+        <Button
+          className="calculator__button--type-number six"
+          value="6"
+          id="six"
+        />
+        <Button
+          className="calculator__button--type-number seven"
+          value="7"
+          id="seven"
+        />
+        <Button
+          className="calculator__button--type-number eight"
+          value="8"
+          id="eight"
+        />
+        <Button
+          className="calculator__button--type-number nine"
+          value="9"
+          id="nine"
+        />
+        <Button
+          className="calculator__button--type-number decimal"
+          value="."
+          id="decimal"
+        />
       </div>
     );
   }
@@ -57,38 +118,52 @@ class Calculator extends React.Component {
 class Screen extends React.Component {
   render() {
     const className = this.props.className;
+    const id = this.props.id;
     const value = this.props.value;
 
-    return <div className={`calculator__screen ${className}`}>{value}</div>;
+    return (
+      <div id={id} className={`calculator__screen ${className}`}>
+        {value}
+      </div>
+    );
   }
 }
 
 Screen.propTypes = {
   className: PropTypes.string,
+  id: PropTypes.string,
   value: PropTypes.string,
 };
 
 Screen.defaultProps = {
   className: '',
+  id: '',
   value: '',
 };
 
 class Button extends React.Component {
   render() {
     const className = this.props.className;
+    const id = this.props.id;
     const value = this.props.value;
 
-    return <div className={`calculator__button ${className}`}>{value}</div>;
+    return (
+      <div id={id} className={`calculator__button ${className}`}>
+        {value}
+      </div>
+    );
   }
 }
 
 Button.propTypes = {
   className: PropTypes.string,
+  id: PropTypes.string,
   value: PropTypes.string,
 };
 
 Button.defaultProps = {
   className: '',
+  id: '',
   value: '',
 };
 
