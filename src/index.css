@@ -37,19 +37,51 @@ code {
 }
 
 .calculator__button--type-ac {
-  background-color: #c25151;
+  background-color: #c76363;
+}
+
+.calculator__button--type-ac:hover {
+  background-color: #c24747;
 }
 
 .calculator__button--type-equal {
   background-color: #8abae0;
 }
 
+.calculator__button--type-equal:hover {
+  background-color: #4599db;
+}
+
 .calculator__button--type-number {
   background-color: #fafafa;
 }
 
+.calculator__button--type-number:hover {
+  background-color: #d6d6d6;
+}
+
 .calculator__button--type-operator {
   background-color: #f0f0f0;
+}
+
+.calculator__button--type-operator:hover {
+  background-color: #d6d6d6;
+}
+
+.calculator__screen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.calculator__screen--type-display {
+  font-size: 3em;
+}
+
+.calculator__screen--type-expression {
+  color: #545454;
+  font-size: 1.3em;
 }
 
 .expression {
