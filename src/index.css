@@ -30,6 +30,12 @@ code {
   background-color: #e6e6e6;
 }
 
+.calculator__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .calculator__button--type-ac {
   background-color: #c25151;
 }
