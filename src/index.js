@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { calc } from 'fp-calculator';
 import './index.css';
 
 class Calculator extends React.Component {
@@ -9,12 +10,50 @@ class Calculator extends React.Component {
     this.state = {
       display: '0',
       expression: '',
+      prevAction: 'ac',
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    console.log(event.target.id);
+    const idActionMap = {
+      zero: '0',
+      one: '1',
+      two: '2',
+      three: '3',
+      four: '4',
+      five: '5',
+      six: '6',
+      seven: '7',
+      eight: '8',
+      nine: '9',
+      clear: 'ac',
+      divide: '/',
+      multiply: '*',
+      subtract: '-',
+      add: '+',
+      equals: '=',
+      decimal: '.',
+    };
+
+    const id = event.target.id;
+    const newAction = idActionMap[id];
+
+    if (newAction === undefined) {
+      console.log('Error: invalid ID: ' + id);
+    } else {
+      const result = calc(
+        newAction,
+        this.state.prevAction,
+        this.state.display,
+        this.state.expression
+      );
+      this.setState({
+        display: result.display,
+        expression: result.expression,
+        prevAction: newAction,
+      });
+    }
   }
 
   render() {
