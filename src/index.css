@@ -20,11 +20,27 @@ code {
     'ac ac divide multiply'
     'seven eight nine subtract'
     'four five six add'
-    'one two three equals'
-    'zero zero decimal equals';
+    'one two three equal'
+    'zero zero decimal equal';
   background-color: #e6e6e6;
   height: 500px;
   width: 400px;
+}
+
+.calculator__button--type-ac {
+  background-color: #c25151;
+}
+
+.calculator__button--type-equal {
+  background-color: #8abae0;
+}
+
+.calculator__button--type-number {
+  background-color: #fafafa;
+}
+
+.calculator__button--type-operator {
+  background-color: #f0f0f0;
 }
 
 .expression {
@@ -55,8 +71,8 @@ code {
   grid-area: add;
 }
 
-.equals {
-  grid-area: equals;
+.equal {
+  grid-area: equal;
 }
 
 .zero {
