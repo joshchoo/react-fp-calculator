@@ -16,11 +16,11 @@ class Calculator extends React.Component {
     return (
       <div className="calculator">
         <Screen
-          className="calculator__screen--type-expression"
+          className="calculator__screen--type-expression expression"
           value={this.state.expression}
         />
         <Screen
-          className="calculator__screen--type-display"
+          className="calculator__screen--type-display display"
           value={this.state.display}
         />
         <Button className="calculator__button--type-ac ac" value="AC" />
