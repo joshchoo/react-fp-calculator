@@ -185,10 +185,8 @@ class Screen extends React.Component {
     const value = this.props.value;
 
     // Replace multiply symbol '*' with '×'
-    const valueModified = value
-      .replace('*', '×')
-      .replace('/', '÷')
-      .replace('-', '−');
+    const valueModified = value.replace('*', '×').replace('/', '÷');
+    // .replace('-', '−');  // FCC expects '-' to be displayed.
 
     return (
       <div id={id} className={`calculator__screen ${className}`}>
