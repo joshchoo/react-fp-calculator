@@ -85,7 +85,7 @@ class Calculator extends React.Component {
         />
         <Button
           className="calculator__button--type-operator multiply"
-          value="X"
+          value="*"
           id="multiply"
           onClick={this.handleClick}
         />
@@ -184,9 +184,15 @@ class Screen extends React.Component {
     const id = this.props.id;
     const value = this.props.value;
 
+    // Replace multiply symbol '*' with '×'
+    const valueModified = value
+      .replace('*', '×')
+      .replace('/', '÷')
+      .replace('-', '−');
+
     return (
       <div id={id} className={`calculator__screen ${className}`}>
-        {value}
+        {valueModified}
       </div>
     );
   }
@@ -210,6 +216,11 @@ class Button extends React.Component {
     const id = this.props.id;
     const value = this.props.value;
 
+    const valueModified = value
+      .replace('*', '×')
+      .replace('/', '÷')
+      .replace('-', '−');
+
     return (
       <button
         id={id}
@@ -217,7 +228,7 @@ class Button extends React.Component {
         onClick={this.props.onClick}
         value={value}
       >
-        {value}
+        {valueModified}
       </button>
     );
   }
